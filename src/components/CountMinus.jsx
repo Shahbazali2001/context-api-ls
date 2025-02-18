@@ -1,10 +1,15 @@
 import React from 'react'
+import { useContext } from 'react'
+import Counter from '../contexts/Counter.jsx'
 
 const CountMinus = () => {
+
+    const {count, setCount} = useContext(Counter)
+
   return (
     <div className='flex justify-center items-center mt-4'>
             
-        <button className='bg-blue-500 p-2 rounded-md'> Count -</button>
+        <button onClick={() => setCount(count - 1)} className='bg-blue-500 p-2 rounded-md'> Count -</button>
 
     </div>
   )
